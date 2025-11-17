@@ -1,13 +1,17 @@
-const createCounter = function (init) {
+const createCounter = (init) => {
+  let currentVal = init;
   return {
     increment: () => {
-      return init + 1;
+      currentVal += 1;
+      return currentVal;
     },
     decrement: () => {
-      return init - 1;
+      currentVal -= 1;
+      return currentVal;
     },
     reset: () => {
-      return init;
+      currentVal = init;
+      return currentVal;
     },
   };
 };
